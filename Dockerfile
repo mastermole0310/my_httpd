@@ -9,3 +9,4 @@ COPY ./index.html /usr/local/apache2/htdocs/
 
 # Указываем порт
 EXPOSE 80
+
