@@ -2,8 +2,8 @@
 
 name: My-GitHub-Actions
 env:
-  Aplication_name: "My_app"
-  Package_name: "App-deploy-ver-${{ githab.sha }}"
+  APLICATION_NAME: "My_app"
+  PACKAGE_NAME: "App-deploy-ver-${{ githab.sha }}"
 
 
 on:
