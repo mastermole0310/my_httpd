@@ -2,7 +2,7 @@
 
 name: My-GitHub-Actions
 env:
-  APLICATION_NAME: "My_app"
+  APPLICATION_NAME: "My_app"
   PACKAGE_NAME: "App-deploy-ver-${{ githab.sha }}"
 
 
@@ -22,7 +22,7 @@ jobs:
       run: |
         echo "Hello Message1"
         echo "Hello Message1"
-        echo "Aplication name: ${{ env.Aplication_name }}"
+        echo "Aplication name: ${{ env.APPLICATION_NAME }}"
 
   
 
@@ -36,4 +36,4 @@ jobs:
       run: echo "Hello World from Deploy job"
       
     - name: Printing deployment package
-      run: echo "Deploy package name is ${{ env.Package_name }}"
+      run: echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
