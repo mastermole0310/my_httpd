@@ -1,3 +1,7 @@
+Status of Last Deployment:<br>
+<img src="https://github.com/mastermole0310/my_httpd/workflows/My-GitHub-Actions/badge.svg?branch-main"><br>
+
+
 ## ==Предварительный просмотр==
 ![hello world](https://user-images.githubusercontent.com/95876810/153070602-1239f759-b580-4704-b4d9-0947affb73b9.jpg)
 
