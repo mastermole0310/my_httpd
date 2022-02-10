@@ -3,7 +3,7 @@
 name: My-GitHub-Actions
 env:
   APPLICATION_NAME: "My_app"
-  PACKAGE_NAME: "App-deploy-ver-${{ githab.sha }}"
+  PACKAGE_NAME: "App-deploy-ver-${{ github.sha }}"
 
 
 on:
