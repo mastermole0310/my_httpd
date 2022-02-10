@@ -1,6 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
 name: My-GitHub-Actions
+env:
+  Aplication_name: "My_app"
+  Package_name: "App-deploy-ver-${{ githab.sha }}"
+
 
 on:
   push:
@@ -13,6 +17,12 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Testing job"
+      
+    - name: Execure few commands
+      run: |
+        echo "Hello Message1"
+        echo "Hello Message1"
+        echo "Aplication name: ${{ env.Aplication_name }}"
 
   
 
@@ -20,6 +30,10 @@ jobs:
   my_deploy:
   
     runs-on: ubuntu-latest
+    needs: [my_testing]
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Deploy job"
+      
+    - name: Printing deployment package
+      run: echo "Deploy package name is ${{ env.Package_name }}"
