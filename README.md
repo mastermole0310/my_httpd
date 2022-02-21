@@ -1,5 +1,5 @@
 Status of Last Deployment:<br>
-<img src="https://github.com/mastermole0310/my_httpd/workflows/My-GitHub-Actions/badge.svg?branch-main"><br>
+<img src="https://github.com/mastermole0310/my_httpd/workflows/Publish Docker image/badge.svg?branch-main"><br>
 
 
 ## ==Предварительный просмотр==
