@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  push_to_registry:
+  build:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -18,16 +18,20 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: mastermole/my_http_server
-      
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
+  
+  test-artifact:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:  
+      - uses: actions/checkout@master
+      - uses: docker/build-push-action@v1
+        env:
+          DOCKER_BUILDKIT: 1
         with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: mastermole/my_httpd_server
+          dockerfile: Dockerfile.artifact
+          tags: latest
