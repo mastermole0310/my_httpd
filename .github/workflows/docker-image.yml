@@ -30,7 +30,7 @@ jobs:
         with:
            dotnet-version : ' 6.0.x '
            include-prerelease : true 
-      - run: dotnet build <my_httpd_server>
+      - run: dotnet build [<my_httpd_server>]
       
       - name: Push Docker image
         run: docker push my_httpd_server
