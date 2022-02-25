@@ -25,17 +25,14 @@ jobs:
           images: mastermole/my_httpd_server 
           
      
-      - name: Copy our repo
-        uses: actions/checkout@v2
-      - name: Setup . NET Core
-        uses: actions/setup-dotnet@v2
+      - name: Build and export the image to Docker
+        uses: docker/build-push-action@v2
         with:
-          dotnet-version: '6.0.x'
-      - name: Install dependencies
-      - run: dotnet restore .
-      - name: Build
-      - run: dotnet build --configuration Release --no-restore .
-       
-       
-      - name: Push Docker image
-        run: docker push my_httpd_server
+          context: .
+          file: ./docker/Dockerfile
+          target: final
+          push: true
+          tags: |
+           ${{ env.IMAGE }}:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+          build-args: |
+           ENVIRONMENT=production
