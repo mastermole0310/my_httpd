@@ -24,15 +24,20 @@ jobs:
         with:
           images: mastermole/my_httpd_server 
           
+      - uses: actions/checkout@v2
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
-         with:
-            dotnet-version: '3.1.x'
-        run: dotnet build my_httpd_server
-        
+        with:
+          dotnet-version: | 
+            3.1.x
+            5.0.x
+      - run: dotnet build my_httpd_server
+      
       - name: Push Docker image
         uses: docker/push-action@v2
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }} 
+        with:
+           context: .
+           push: true
+           tags: ${{ steps.meta.outputs.tags }}
+           labels: ${{ steps.meta.outputs.labels }
         
