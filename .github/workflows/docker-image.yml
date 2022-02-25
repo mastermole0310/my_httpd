@@ -25,15 +25,17 @@ jobs:
           images: mastermole/my_httpd_server 
           
      
-      - name: Build project
+      - name: Copy our repo
         uses: actions/checkout@v2
-      - name: Setup dotnet
+      - name: Setup . NET Core
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '6.0.x'
-          include-prerelease: true
-      - run: dotnet build -p:Version=1.2.3.4
+      - name: Install dependencies
+      - run: dotnet restore ./WebSiteMeta
+      - name: Build
+      - run: dotnet build --configuration Release --no-restore ./WebSiteMeta
        
-    
+       
       - name: Push Docker image
         run: docker push my_httpd_server
