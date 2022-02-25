@@ -33,6 +33,6 @@ jobs:
           target: final
           push: true
           tags: |
-           ${{ env.IMAGE }}:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+            ${{ env.IMAGE }}:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           build-args: |
-           ENVIRONMENT=production
+            ENVIRONMENT=production
