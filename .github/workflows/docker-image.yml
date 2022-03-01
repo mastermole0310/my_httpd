@@ -36,4 +36,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/simplewhale:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/my_httpd:1.0.1
