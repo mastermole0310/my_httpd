@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: mastermole/my_httpd_server
+          images: mastermole/my_server
           
       -
         name: Login to DockerHub
@@ -36,4 +36,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my_httpd:0.1.0
+          tags: ${{ secrets.DOCKER_USERNAME }}/my_httpd_server:0.1.0
