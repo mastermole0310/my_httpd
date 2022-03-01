@@ -23,9 +23,9 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v1
         with:
           images: mastermole/my_best_server
-          tag-semver:
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+          tag-semver: |
+            {{version}}
+            {{major}}.{{minor}}
           
       -
         name: Login to DockerHub
