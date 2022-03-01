@@ -32,5 +32,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          images: mastermole/my_httpd_server
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/simplewhale:latest
