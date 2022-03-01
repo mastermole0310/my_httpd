@@ -36,5 +36,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: my_httpd_server:version
+       
       
