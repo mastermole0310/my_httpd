@@ -29,7 +29,7 @@ jobs:
       name: Update Minor version
       uses: hmanzur/actions-set-secret@v2.0.0
       with:
-        name: 'MINOR'
-        value: $((${{ secrets.MINOR }}+1))
+        name: 'PATCH'
+        value: $((${{ secrets.PATCH }}+1))
         repository: mastermole0310/my_httpd
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
