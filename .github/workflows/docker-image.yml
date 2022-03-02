@@ -31,5 +31,5 @@ jobs:
       with:
         name: 'MINOR'
         value: $((${{ secrets.MINOR }}+1))
-        repository: mastermole/my_best_server
+        repository: mastermole0310/my_httpd
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
