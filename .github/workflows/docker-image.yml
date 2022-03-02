@@ -31,5 +31,5 @@ jobs:
       with:
         name: 'MINOR'
         value: $((${{ secrets.MINOR }}+1))
-        repository: EriksonGM/MasterReport
+        repository: mastermole/my_best_server
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
