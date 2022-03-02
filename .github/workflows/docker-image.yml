@@ -23,7 +23,7 @@ jobs:
         token: ${{secrets.github_token}}  
         
     -    
-      name: Build docker image
+      name: Build Docker image
       run: docker build . --tag mastermole/my_best_server:${{ secrets.MAJOR }}.${{ secrets.MINOR }}.${{ secrets.PATCH }}.${{ steps.buildnumber.outputs.build_number }}
     -
       name: Login to DockerHub
