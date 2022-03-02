@@ -11,17 +11,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:    
+    steps:  
+    -
       uses: actions/checkout@v2
     
-    
+    -
       name: Generate build number
       id: buildnumber
       uses: einaregilsson/build-number@v3 
       with:
         token: ${{secrets.github_token}}  
         
-        
+    -    
       name: Build docker image
       run: docker build . --tag mastermole/my_best_server:${{ secrets.MAJOR }}.${{ secrets.MINOR }}.${{ secrets.PATCH }}.${{ steps.buildnumber.outputs.build_number }}
     -
